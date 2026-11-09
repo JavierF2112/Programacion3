@@ -1,0 +1,38 @@
+# Visual Studio
+.vs/
+*.usuario
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Construir
+[Bb]en/
+[Oo]bj/
+
+# Prueba
+Resultados de la prueba/
+*.trx
+
+# NuGet
+paquetes/
+*.nupkg
+*.snupkg
+
+# Publicar
+publicar/
+*.publishsettings
+
+# Registros
+*.registro
+
+# Rider / JetBrains
+.idea/
+
+# VS Code
+.vscode/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+trabajo-practico-1/appsettings.json
