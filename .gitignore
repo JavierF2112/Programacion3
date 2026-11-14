@@ -1,16 +1,16 @@
 # Visual Studio
 .vs/
-*.usuario
+*.user
 *.suo
 *.userosscache
 *.sln.docstates
 
 # Construir
-[Bb]en/
+[Bb]in/
 [Oo]bj/
 
 # Prueba
-Resultados de la prueba/
+TestResults/
 *.trx
 
 # NuGet
@@ -19,11 +19,11 @@ paquetes/
 *.snupkg
 
 # Publicar
-publicar/
+publish/
 *.publishsettings
 
 # Registros
-*.registro
+*.log
 
 # Rider / JetBrains
 .idea/

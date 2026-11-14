@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-
+using Programacion3.Models;
+using Programacion3.Services;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Programacion3.Controllers
@@ -8,18 +9,36 @@ namespace Programacion3.Controllers
     [ApiController]
     public class ProductosController : ControllerBase
     {
+        private readonly IProductoService _productoService;
+
+        // Inyectamos el servicio a través del constructor
+        public ProductosController(IProductoService productoService)
+        {
+            _productoService = productoService;
+        }
+
         // GET: api/<ProductosController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            // El controller delega la tarea al Service
+            var productos = _productoService.ObtenerTodos();
+            return Ok(productos);
         }
 
         // GET api/<ProductosController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IActionResult Get(int id)
         {
-            return "value";
+            // El controller le pide al Service que busque el producto
+            var producto = _productoService.ObtenerPorId(id);
+
+            if (producto == null)
+            {
+                return NotFound(); // Si el Service devolvió null, tiramos 404
+            }
+
+            return Ok(producto); // Si lo encontró, tiramos 200 OK
         }
 
         // POST api/<ProductosController>
