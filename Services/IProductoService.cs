@@ -8,6 +8,6 @@ namespace Programacion3.Services
         IEnumerable<Producto> ObtenerTodos();
 
         // Operación 2: Obtener un producto por su ID
-        Producto ObtenerPorId(int id);
+        Producto? ObtenerPorId(int id);
     }
 }
