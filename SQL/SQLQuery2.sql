@@ -1,0 +1,18 @@
+USE [Programacion3]
+GO
+/****** Object:  Table [dbo].[Productos]    Script Date: 16/11/2026 22:53:30 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Productos](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Nombre] [varchar](200) NOT NULL,
+	[Precio] [decimal](10, 2) NOT NULL,
+	[Stock] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
